@@ -1,0 +1,83 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Calculator container */
+.calculator {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+    width: 500px;
+}
+
+/* Display and Clear Button Container */
+.display-container {
+    display: flex;
+    margin-bottom: 20px;
+    gap:5px;
+}
+
+/* Display screen */
+#display {
+    flex: 1; /* Takes most of the space */
+    height: 50px;
+    font-size: 24px;
+    text-align: right;
+    padding-right: 10px;
+    border: 1px solid #101010;
+    width:320px;
+    margin:15px;
+    border-radius: 5px 0 0 5px; /* Rounded left corners */
+}
+
+/* Clear button */
+.clearDisplay{
+    width: 100px;
+    height: 55px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 0; /* Rounded right corners */
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Buttons grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+margin:10px;}
+
+/* Button styles */
+button {
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+button:active {
+    transform: scale(0.98);
+}

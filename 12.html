@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Check Array</title>
+</head>
+<body>
+  <h2>Check if Input is an Array</h2>
+  <input type="text" id="input" placeholder="Enter Value">
+  <button onclick="check()">Check</button>
+  <p id="result"></p>
+
+  <script>
+    function check() {
+      let input = document.getElementById("input").value;
+
+      try {
+        input = JSON.parse(input);
+      } catch (e) {}
+
+      const result = Array.isArray(input) ? "It is an Array" : "Not an Array";
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>

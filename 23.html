@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Remove Characters</title>
+</head>
+<body>
+  <input type="text" id="string" placeholder="Enter String">
+  <input type="number" id="count" placeholder="Number of Characters">
+  <button onclick="removeChars()">Remove</button>
+  <p id="result"></p>
+
+  <script>
+    function removeChars() {
+      let str = document.getElementById("string").value;
+      let count = parseInt(document.getElementById("count").value);
+      document.getElementById("result").innerText = str.slice(count);
+    }
+  </script>
+</body>
+</html>

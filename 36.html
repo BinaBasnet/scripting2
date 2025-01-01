@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Manager</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cookie Manager</h1>
+
+    <h3>Set Cookie</h3>
+    <label for="key">Key:</label>
+    <input type="text" id="key" placeholder="Enter key">
+    <label for="value">Value:</label>
+    <input type="text" id="value" placeholder="Enter value">
+    <button onclick="setCookie()">Set Cookie</button>
+
+    <h3>Get Cookie</h3>
+    <label for="getKey">Enter key to retrieve value:</label>
+    <input type="text" id="getKey" placeholder="Enter key">
+    <button onclick="getCookie()">Get Cookie</button>
+
+    <h3>Display All Cookies</h3>
+    <button onclick="displayCookies()">Display All Cookies</button>
+
+    <h3>Delete Cookie</h3>
+    <label for="deleteKey">Enter key to delete:</label>
+    <input type="text" id="deleteKey" placeholder="Enter key to delete">
+    <button onclick="deleteCookie()">Delete Cookie</button>
+
+    <h3>Delete All Cookies</h3>
+    <button onclick="deleteAllCookies()">Delete All Cookies</button>
+
+    <h3>Cookies Table</h3>
+    <table id="cookiesTable">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Cookies will be displayed here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to set cookie
+        function setCookie() {
+            const key = document.getElementById('key').value;
+            const value = document.getElementById('value').value;
+            if (key && value) {
+                document.cookie = `${key}=${value}; path=/`;
+                alert('Cookie set!');
+            } else {
+                alert('Please enter both key and value.');
+            }
+        }
+
+        // Function to get a cookie by key
+        function getCookie() {
+            const key = document.getElementById('getKey').value;
+            const cookies = document.cookie.split(';');
+            let cookieValue = 'Cookie not found';
+            cookies.forEach(cookie => {
+                let [cookieKey, cookieVal] = cookie.trim().split('=');
+                if (cookieKey === key) {
+                    cookieValue = cookieVal;
+                }
+            });
+            alert(`Value of "${key}": ${cookieValue}`);
+        }
+
+        // Function to display all cookies
+        function displayCookies() {
+            const cookies = document.cookie.split(';');
+            const tableBody = document.getElementById('cookiesTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';  // Clear the table before adding new data
+            cookies.forEach(cookie => {
+                const [key, value] = cookie.trim().split('=');
+                const row = tableBody.insertRow();
+                const cellKey = row.insertCell(0);
+                const cellValue = row.insertCell(1);
+                cellKey.textContent = key;
+                cellValue.textContent = value;
+            });
+        }
+
+        // Function to delete a cookie by key
+        function deleteCookie() {
+            const key = document.getElementById('deleteKey').value;
+            if (key) {
+                document.cookie = `${key}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+                alert(`Cookie with key "${key}" has been deleted.`);
+                displayCookies();  // Update the displayed cookies
+            } else {
+                alert('Please enter a key to delete.');
+            }
+        }
+
+        // Function to delete all cookies
+        function deleteAllCookies() {
+            const cookies = document.cookie.split(';');
+            cookies.forEach(cookie => {
+                const [key] = cookie.trim().split('=');
+                document.cookie = `${key}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+            });
+            alert('All cookies have been deleted.');
+            displayCookies();  // Update the displayed cookies
+        }
+    </script>
+</body>
+</html>

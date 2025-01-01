@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Days Until Christmas</title>
+</head>
+<body>
+  <h1>Days Until Christmas</h1>
+  <p id="output"></p>
+
+  <script>
+    function daysUntilChristmas() {
+      const today = new Date();
+      const christmas = new Date(today.getFullYear(), 12, 25);
+
+      if (today > christmas) {
+        christmas.setFullYear(today.getFullYear() + 1);
+      }
+
+      const daysLeft = Math.ceil((christmas - today) / (1000 * 60 * 60 * 24));
+      document.getElementById('output').innerText = `Days until Christmas: ${daysLeft}`;
+    }
+
+    // Call the function when the page loads
+    daysUntilChristmas();
+  </script>
+</body>
+</html>

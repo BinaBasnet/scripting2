@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Color-Coding</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .number {
+            margin: 5px;
+            padding: 10px;
+            width: 50px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .even {
+            background-color: green;
+            color: white;
+        }
+        .odd {
+            background-color: yellow;
+        }
+        .prime {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="number-container"></div>
+
+<script>
+    function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    function createNumbers() {
+        const container = document.getElementById('number-container');
+        for (let i = 0; i <= 10; i++) {
+            const div = document.createElement('div');
+            div.classList.add('number');
+
+            // Apply styles based on the type of number
+            if (isPrime(i)) {
+                div.classList.add('prime');
+                div.innerText = i;
+            } else if (i % 2 === 0) {
+                div.classList.add('even');
+                div.innerText = i;
+            } else {
+                div.classList.add('odd');
+                div.innerText = i;
+            }
+
+            container.appendChild(div);
+        }
+    }
+
+    createNumbers();
+</script>
+
+</body>
+</html>

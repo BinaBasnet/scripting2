@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter with Reset</title>
+    <link rel="stylesheet" href="32.css">
+</head>
+<div>
+<h1>Counter App</h1>
+<div class="container">
+<button id="increment">+</button>
+<div id="counter">4</div>
+<button id="decrement">-</button>
+</div>
+<button id="reset">Reset</button>
+
+<script>
+    let counterValue = 4;
+
+    // Increment the counter by 1
+    document.getElementById('increment').addEventListener('click', () => {
+        counterValue++;
+        document.getElementById('counter').innerText = counterValue;
+    });
+    document.getElementById('decrement').addEventListener('click', () => {
+        counterValue--;
+        document.getElementById('counter').innerText = counterValue;
+    });
+
+    // Reset the counter to 0
+    document.getElementById('reset').addEventListener('click', () => {
+        counterValue = 4;
+        document.getElementById('counter').innerText = counterValue;
+    });
+</script>
+
+</body>
+</html>

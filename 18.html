@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Date Difference</title>
+</head>
+<body>
+  <h2>Date Difference</h2>
+  <p id="result"></p>
+
+  <script>
+    function dateDiff(date1, date2) {
+      const diff = Math.abs(new Date(date2) - new Date(date1));
+      return diff / (1000 * 60 * 60 * 24);
+    }
+
+    let days = dateDiff("2024-12-01", "2024-12-25");
+    document.getElementById("result").innerText = `Days Difference: ${days}`;
+  </script>
+</body>
+</html>

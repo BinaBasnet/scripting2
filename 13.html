@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Join Array</title>
+</head>
+<body>
+  <h2>Join Array Elements</h2>
+  <input type="text" id="array" placeholder="Enter elements separated by commas">
+  <button onclick="joinArray()">Join</button>
+  <p id="result"></p>
+
+  <script>
+    function joinArray() {
+      const arr = document.getElementById("array").value.split(",");
+      document.getElementById("result").innerText = arr.join(", ");
+    }
+  </script>
+</body>
+</html>

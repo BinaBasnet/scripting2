@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(247, 243, 243);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgb(8, 215, 215);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 0;
+}
+
+.circle {
+    background-color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    position: relative;
+}
+
+.clock-numbers {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.number {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    transform-origin: center;
+}
+
+/* Apply rotations and adjust positions to center the numbers within the circle */
+.number:nth-child(1) {
+    transform: rotate(0deg) translateY(-90px);
+}
+.number:nth-child(2) {
+    transform: rotate(30deg) translateY(-90px);
+}
+.number:nth-child(3) {
+    transform: rotate(60deg) translateY(-90px);
+}
+.number:nth-child(4) {
+    transform: rotate(90deg) translateY(-90px);
+}
+.number:nth-child(5) {
+    transform: rotate(120deg) translateY(-90px);
+}
+.number:nth-child(6) {
+    transform: rotate(150deg) translateY(-90px);
+}
+.number:nth-child(7) {
+    transform: rotate(180deg) translateY(-90px);
+}
+.number:nth-child(8) {
+    transform: rotate(210deg) translateY(-90px);
+}
+.number:nth-child(9) {
+    transform: rotate(240deg) translateY(-90px);
+}
+.number:nth-child(10) {
+    transform: rotate(270deg) translateY(-90px);
+}
+.number:nth-child(11) {
+    transform: rotate(300deg) translateY(-90px);
+}
+.number:nth-child(12) {
+    transform: rotate(330deg) translateY(-90px);
+}
+.hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform-origin: 50% 100%; /* One end (center of clock) stays fixed */
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.hour-hand {
+    top:18%;
+    width: 4px;
+    height: 60px; /* Adjust length as needed */
+    background-color: black;
+}
+
+.minute-hand {
+    width: 4px;
+    top:13%;
+    height: 70px; /* Adjust length as needed */
+    background-color: darkgray;
+}
+
+.second-hand {
+    width: 2px;
+    top:8%;
+    height: 80px; /* Adjust length as needed */
+    background-color: red;
+}
+

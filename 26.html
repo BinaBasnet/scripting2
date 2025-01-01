@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Most Frequent Words</title>
+</head>
+<body>
+  <h2>Ten Most Frequent Words</h2>
+  <textarea id="inputText" rows="5" cols="50" placeholder="Enter text here"></textarea>
+  <button onclick="tenMostFrequentWords()">Get Frequent Words</button>
+  <p id="result"></p>
+
+  <script>
+    function tenMostFrequentWords() {
+      let text = document.getElementById("inputText").value;
+      let words = text.split(/\s+/).filter(word => word.length > 0);
+      let wordCount = {};
+
+      // Count frequency of each word
+      words.forEach(word => {
+        word = word.toLowerCase();
+        wordCount[word] = (wordCount[word] || 0) + 1;
+      });
+
+      // Sort words by frequency
+      let sortedWords = Object.entries(wordCount).sort((a, b) => b[1] - a[1]).slice(0, 10);
+      
+      let result = "Top 10 Frequent Words:\n";
+      sortedWords.forEach(item => {
+        result += `${item[0]}: ${item[1]} times\n`;
+      });
+
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>

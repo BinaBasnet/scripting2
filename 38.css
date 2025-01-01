@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 0;
+  }
+  
+  button {
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  #change-bg {
+    background-color: steelblue;
+    color: white;
+  }
+  
+  #change-para-bg {
+    background-color: gold;
+    color: black;
+  }
+  
+  #hide-para {
+    background-color: orange;
+    color: black;
+  }
+  
+  #show-para {
+    background-color: green;
+    color: black;
+  }
+  
+  #increase-font {
+    background-color: purple;
+    color: white;
+  }
+  
+  #decrease-font {
+    background-color: green;
+    color: white;
+  }
+  
+  #reset-font {
+    background-color: red;
+    color: white;
+  }
+  
+  #change-text-color {
+    background-color: navy;
+    color: white;
+  }
+  
+  p {
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 12pt;
+    border: 1px solid #ccc;
+  }
+  

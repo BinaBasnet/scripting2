@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    padding: 20px;
+}
+
+h1 {
+    color: black;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Container for counter and buttons */
+.container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px; /* Add spacing between elements */
+    padding: 20px;
+}
+
+/* Counter Styled as Button */
+#counter {
+    padding: 15px 40px; /* Padding for larger size */
+    background-color: rgba(240, 151, 218, 0.84); /* Blue background color */
+    color: rgb(7, 7, 7); /* black text color */
+    font-size: 24px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    text-align: center;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Button Styles */
+button {
+    background-color: rgb(36, 126, 36); /* Green background */
+    padding: 15px 25px; /* Bigger size */
+    margin: 0 5px; /* Small spacing between buttons */
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Reset Button */
+#reset {
+    display: block; /* Place on a new line */
+    margin: 10px; /* Center horizontally */
+    margin-left:90px;
+    padding: 20px 40px;
+    background-color: rgb(36, 126, 36); /* Green background */
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
